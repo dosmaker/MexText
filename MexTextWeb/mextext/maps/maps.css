@@ -1,0 +1,98 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #29160c, #633f2b, #3e3024);
+}
+
+#mapContainer{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 65%;
+    border-radius: 20px;
+}
+
+button {
+    font-size: 3vh;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #ba4400;
+    color: #fff;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #923701;
+}
+
+.change{
+    position: absolute;
+    top: 83%;
+}
+
+canvas {
+    position: absolute;
+    top: 74%;
+  }
+
+#selectedValue {
+    background:none;
+    font-size: 2.5vh;
+    width: 20%;
+    text-align: center;
+    border-style: none;
+    -moz-appearance: textfield;
+    color: grey;
+}
+
+#selectedValue::-webkit-inner-spin-button,
+#selectedValue::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#inputKm{
+    position: absolute;
+    top: 72%;
+    width: 20%;
+    font-size: 2.5vh;
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+#home{
+    position: absolute;
+    top: 75%;
+    right: 20%;
+    font-size: 2.5vh;
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+@media screen and (max-width: 768px) {
+    /* Regole CSS per schermi con larghezza massima di 768px (dispositivi mobili) */
+    /* Modifica il layout o le dimensioni degli elementi per adattarli a dispositivi mobili */
+    body{
+        height: 120vh;
+    }
+
+    #inputKm{
+        width: 40%;
+    }
+
+    #home{
+        top: 90%;
+        right: 6%;
+    }
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="NavBar/navbar.css">
+    <script src="index.js"></script>
+    <script src="NavBar/navbar.js"></script>
+    <title>MexText</title>
+</head>
+<body onload="feature()">
+    <header class="navbar" id="bar">
+    <a href="index.html">
+    <div class="logo">
+        <img src="Images/logo/Mex_Text.png" alt="">
+        <div class="logo-text">
+        <span class="txt">MexText</span>
+        </div>
+    </div>
+    </a>
+
+    <div class="menu-container">
+        <button class="menu-button">Menu</button>
+        <div class="menu-content">
+          <a href="#" onclick="scrollToElement()">Feature</a>
+          <a href="#">Blog</a>
+          <a href="Privacy/privacy.html">Privacy</a>
+          <a href="#">About Us</a>
+          <a href="http://gameshop.ns0.it/MexTextWeb/">MexTextWeb</a>
+          <a href="MexTextJava/h.jar" download="h.jar">Download</a>
+        </div>
+      </div>
+
+    <div class="wrapper">
+        <input type="checkbox" name="checkbox" class="switch" onclick="toggleColor()">
+    </div>
+    <div class="navbar-text">
+        <button class="text-buttons" onclick="scrollToElement()">Feature</button>
+        <button class="text-buttons">Blog</button>
+        <a href="Privacy/privacy.html"><button class="text-buttons">Privacy</button></a>
+        <button class="text-buttons">About Us</button>
+    </div>
+
+    <div class="navbar-buttons">
+        <a href="http://gameshop.ns0.it/MexTextWeb/"><button class="txt" id="text-button">MexText Web</button></a>
+        <a href="MexTextJava/h.jar" download="h.jar"> 
+            <button class="txt" id="download-button">Download</button>
+        </a>
+    </div>
+    </header>
+    
+    <div class="image-container" id="firstPnl">
+        <img src="Images/people.jpg" alt="image">
+        <img src="Images/three.jpg" alt="image">
+        <h1 class="image-title txt">MexText</h1>
+        <h3 class="image-desc txt">Wherever you are, always connected to all your contacts and chats.</h3>
+    </div>
+
+    <div class="image-container" id="feature">
+        <img src="Images/code.png" alt="image">
+        <h1 class="image-title txt">Open Source MexText</h1>
+        <h3 class="image-desc txt">Your favorite message application fully open source</h3>
+        <label for="git" class="blinking-text">BETA</label>
+        <a href="https://github.com/dosmaker/MexText"> <i id="git" class="fa fa-github" style="font-size:70px;color:red"></i></a>
+    </div>
+
+    <div class="container">
+        <h2>Thanks to our fully server-side system, you have complete access to your contact and your favourite chats wherever you are!</h2>
+        <div class="oval-container">
+            <span class="oval-text" id="oval1">CIAO!</span>
+            <span class="oval-text" id="oval2">ΓΕΙΑ!</span>
+            <span class="oval-text" id="oval3">HOI!</span>
+            <span class="oval-text" id="oval4">BONJOUR!</span>
+            <span class="oval-text" id="oval5">HELLO!</span>
+            <span class="oval-text" id="oval6">HOLA!</span>
+            <span class="oval-text" id="oval7">ПРИВЕТ!</span>
+        </div>
+    </div>
+
+    <div class="container2">
+        <img src="Images/earth.png" alt="Foto">
+        <div class="scritta-alto-sinistra">Find people all around the world!</div>
+        <div class="scritta-basso-destra">By activating geolocation or entering your location, you can find people nearby you</div>
+    </div>
+    
+</body>
+</html>

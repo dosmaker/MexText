@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+/*Central page up*/
+#firstPnl {
+  margin-top: 2%;
+  height: 85vh;
+}
+
+#firstPnl img {
+  margin-top: -5%;
+  position: relative;
+  top: 10%;
+  left: 2.5%;
+  width: 40%;
+  margin-right: 5%;
+}
+
+#firstPnl h1 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  margin-top: 3.5%;
+}
+
+#firstPnl h3 {
+  position: absolute;
+  left: 50%;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* nasconde parti dell'immagine che eccedono il contenitore */
+  backdrop-filter: blur(10px); /* crea uno sfondo sfocato */
+}
+
+.image-container img {
+  position: relative;
+  border-radius: 5%; /* crea un'immagine con i bordi curvi */
+  width: 50%;
+  margin-top: 6%;
+}
+
+.image-title {
+  position: absolute;
+  top: 4%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.image-desc {
+  position: absolute;
+  top: 8%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  margin-top: 3%;
+}
+
+.fa-github {
+  position: absolute;
+  top: 7%;
+  right: 30%;
+}
+
+.blinking-text {
+  position: absolute;
+  top: 7%;
+  left: 64%;
+  font-size: 2.5vh;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #c71717;
+  transform: rotate(-50deg);
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+}
+
+
+
+/*Central page center*/
+.container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-top: 5%;
+}
+
+.container h2 {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 36px;
+  color: #e26e26;
+  text-shadow: 1px 1px 2px #000;
+  z-index: 200;
+}
+
+.oval-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 80%;
+}
+
+.oval-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  background-color: #f48038a2;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: oval-flutter 2s infinite;
+}
+
+#oval1{ top: 5%;  left: 10%; }
+
+#oval2{ top: 15%;  left:35%; }
+
+#oval3{ top: 60%;  left: 15%; }
+
+#oval4{ top: 80%;  left: 45%; }
+
+#oval5{ top: 70%;  right: 15%; }
+
+#oval6{ top: 10%;  right: 20%; }
+
+#oval7{ top: 30%;  right: 5%; }
+
+@keyframes oval-flutter {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+
+
+/*Central page down*/
+.container2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  margin-top: 8%;
+}
+
+.container2 img {
+  opacity: 50%;
+  width: 60%;
+  border: none;
+}
+
+.scritta-alto-sinistra {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 200;
+  font-size: 3.5vh;
+  text-align: justify;
+  color: transparent;
+  background: linear-gradient(to left, #b45215, #fb8f4c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.scritta-basso-destra {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 25%;
+  z-index: 200;
+  font-size: 3.5vh;
+  text-align: justify;
+  color: transparent;
+  background: linear-gradient(to left, #b45215, #fb8f4c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+@media screen and (max-width: 768px) {
+  /* Regole CSS per schermi con larghezza massima di 768px (dispositivi mobili) */
+  /* Modifica il layout o le dimensioni degli elementi per adattarli a dispositivi mobili */
+  
+  /*Central page up*/
+  #firstPnl {
+    height: 60vh;
+  }
+
+  #firstPnl img {
+    width: 100%;
+  }
+
+  #firstPnl h1 {
+    margin-top: 5%;
+    font-size: 5vh;
+  }
+
+  #firstPnl h3 {
+    margin-top: 0%;
+    font-size: 2vh;
+  }
+
+  .fa-github {
+    right: 10%;
+  }
+
+  .image-container {
+    height: 70vh;
+  }
+  
+  .image-container img {
+    width: 70%;
+  }
+  
+  .image-title {
+    font-size: 4.5vh;
+    width: 80%;
+  }
+  
+  .image-desc {
+    top: 20%;
+    font-size: 2vh;    
+  }
+
+  .blinking-text {
+    left: 68%;
+  }
+
+  /*Central page center*/
+  .container {
+    margin-top: 0%;
+  }
+
+  .container h2 {
+    font-size: 2.5vh;
+  }
+
+  #oval1{ top: 5%;  left: 10%; }
+
+  #oval2{ top: 15%;  left:45%; }
+
+  #oval3{ top: 60%;  left: 20%; }
+
+  #oval4{ top: 80%;  left: 40%; }
+
+  #oval5{ top: 70%;  right: 0%; }
+
+  #oval6{ top: 7.5%;  right: 0%; }
+
+  #oval7{ top: 30%;  right: -15%; }
+
+  /*Central page down*/
+  .container2 img {
+    width: 80%;
+  }
+
+  .scritta-alto-sinistra {
+    top: 5%;
+    left: 15%;
+    font-size: 2vh;
+  }
+
+  .scritta-basso-destra {
+    bottom: 5%;
+    right: 15%;
+    font-size: 2vh;
+    width: 75%;
+  }
+}

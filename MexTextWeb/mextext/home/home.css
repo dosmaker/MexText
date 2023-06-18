@@ -1,0 +1,93 @@
+body {
+    background-image: url("people.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 15%;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 5vh;
+    text-align: center;
+    overflow: hidden; /* nasconde il testo che supera le dimensioni dell'elemento */
+    border-right: .15em solid orange; /* crea il cursore di scrittura */
+    white-space: nowrap; /* impedisce il wrapping del testo */
+    letter-spacing: .10em; /* definisce la spaziatura tra le lettere */
+    animation: typing 2.5s steps(40, end), /* animazione dell'effetto scrittura */
+                blink-caret .75s step-end infinite, /* animazione del cursore di scrittura */
+                change-color 4s infinite;
+}
+
+@keyframes typing {
+    from { width: 0% }
+    to { width: 40% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+
+  @keyframes change-color {
+    0% {
+      color: red;
+    }
+    25% {
+      color: aqua;
+    }
+    50% {
+      color: green;
+    }
+    75% {
+      color: orange;
+    }
+    100% {
+      color: red;
+    }
+  }
+
+button {
+    font-size: 3vh;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #ba4400;
+    color: #fff;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #923701;
+}
+
+#buttons {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+#buttons2 {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* Regole CSS per schermi con larghezza massima di 768px (dispositivi mobili) */
+  /* Modifica il layout o le dimensioni degli elementi per adattarli a dispositivi mobili */
+  h1{
+    font-size: 2vh;
+  }
+
+  #buttons2 {
+    top: 50%;
+  }
+}

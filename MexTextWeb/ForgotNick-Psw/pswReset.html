@@ -1,0 +1,28 @@
+<head>
+    <title>MexTextWeb</title>
+    <link rel="stylesheet" href="pswReset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="pswReset.js"></script>
+    <script type="text/javascript" src="sha3.js"></script>
+</head>
+<body onload="tk()">
+
+    <div>
+        <form action="newPsw.jsp" method="post">
+            <input type="hidden" name="token" id="token">
+            <label for="chk" aria-hidden="true">Insert your new password</label>
+            <div class="password-container">
+                <input type="password" name="pswd" id="pswd" placeholder="Password" required="" autocomplete="off" oninput="checkPasswordsMatch()">
+                <span class="password-toggle" id="toggle" onclick="togglePasswordVisibility()"><i id="eye" class="fa fa-eye"></i></span>
+            </div>            
+            <div class="password-container">
+                <input type="password" name="pswd1" id="pswd1" placeholder="Password" required="" autocomplete="off" oninput="checkPasswordsMatch()">
+                <span class="password-toggle" id="toggle1" onclick="togglePasswordVisibility1()"><i id="eye1" class="fa fa-eye"></i></span>
+                <span class="tooltip" id="toolt">Passwords don't match</span>
+            </div> 
+            <button type="submit" id="confirm" onclick="cryptL()" disabled>Confirm</button>
+        </form>
+    </div>
+
+</body>
+</html>

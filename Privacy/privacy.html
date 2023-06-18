@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="privacy.css">
+    <link rel="stylesheet" href="../NavBar/navbar.css">
+    <script src="../NavBar/navbar.js"></script>
+    <title>MexText</title>
+</head>
+<body>
+    <header class="navbar" id="bar">
+        <a href="../index.html">
+        <div class="logo">
+            <img src="../Images/logo/Mex_Text.png" alt="">
+            <div class="logo-text">
+            <span class="txt">MexText</span>
+            </div>
+        </div>
+        </a>
+    
+        <div class="menu-container">
+            <button class="menu-button">Menu</button>
+            <div class="menu-content">
+              <a href="../index.html?id=feature">Feature</a>
+              <a href="#">Blog</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="#">About Us</a>
+              <a href="http://gameshop.ns0.it/MexTextWeb/">MexTextWeb</a>
+              <a href="../MexTextJava/h.jar" download="h.jar">Download</a>
+            </div>
+          </div>
+    
+        <div class="wrapper">
+            <input type="checkbox" name="checkbox" class="switch" onclick="toggleColor()">
+        </div>
+        <div class="navbar-text">
+            <button class="text-buttons" onclick="scrollToElement()">Feature</button>
+            <button class="text-buttons">Blog</button>
+            <a href="Privacy/privacy.html"><button class="text-buttons">Privacy</button></a>
+            <button class="text-buttons">About Us</button>
+        </div>
+    
+        <div class="navbar-buttons">
+            <a href="http://gameshop.ns0.it/MexTextWeb/"><button class="txt" id="text-button">MexText Web</button></a>
+            <a href="MexTextJava/h.jar" download="h.jar"> 
+                <button class="txt" id="download-button">Download</button>
+            </a>
+        </div>
+        </header>
+
+    <div class="container">
+        <div class="text-block">
+            <h2>Your chats Encrypted</h2>
+            <p>Using an innovative algorithm, using your personal data for encrypting, your chats
+                will be ever encrypted on the server and only you would be able to read it.
+            </p>
+        </div>
+        <div class="image-block">
+            <img src="Images/privacy.jpg" alt="Immagine 1">
+        </div>
+        </div>
+        <div class="container" style="flex-direction: row-reverse;">
+        <div class="text-block" id="text-block-right">
+            <h2>Your message ever online</h2>
+            <p>Your messages are always available online through our databases.
+                You won't have to worry about switching devices, you just need your account credentials to recover all your chats.
+                <br><br>In Beta version your chats are not encrypted, this feature will be implemented soon.</p>
+        </div>
+        <div class="image-block">
+            <img src="Images/server.jpg" alt="Immagine 2">
+        </div>
+        </div>
+        <div class="container">
+        <div class="text-block">
+            <h2>Encrypted connections</h2>
+            <p>All of your data and messages are sent through encrypted connections. <br>
+                Only you and the recipient will be able to read the messages.
+            </p>
+        </div>
+        <div class="image-block">
+            <img src="Images/key.jpg" alt="Immagine 3">
+        </div>
+    </div>
+
+</body>
+</html>
