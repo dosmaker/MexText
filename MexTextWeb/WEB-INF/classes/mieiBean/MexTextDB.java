@@ -23,9 +23,9 @@ public class MexTextDB implements java.io.Serializable{
     private String nickname, password, email, token, nicknameChat = "", content = "";
 
     public MexTextDB() {
-        String url = "jdbc:mysql://localhost:3306/MexText";
+        String url = "jdbc:mysql://raspberrypi.local:3306/MexText";
         String user = "root";
-        String password = "";
+        String password = "Sciascia1!";
 
         try {
             conn = DriverManager.getConnection(url, user, password);
