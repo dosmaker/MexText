@@ -23,16 +23,53 @@
               xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                   var response = this.responseText.trim();
+                  const result = response;
                   var message = "";
-                  for (var i = 0; i < response.length; i++) {
-                      message += response.charAt(i);
-                      if ((i + 1) % 35 === 0) {
-                          var lastSpaceIndex = message.lastIndexOf(" ");
-                          if (lastSpaceIndex !== -1) {
-                          message = message.substring(0, lastSpaceIndex) + "\n";
+                  var currentLine = "";
+                  var word = "";
+                  
+                  for (var i = 0; i < result.length; i++) {
+                      var currentChar = result.charAt(i);
+                  
+                      if (currentChar === " " || currentChar === "\n") {
+                          if (currentChar === "\n") {
+                              // Se il carattere corrente è un a capo, aggiungo il rigo corrente a `message`
+                              message += currentLine.trim() + "\n";
+                              currentLine = "";
+                          }else{
+                              if (currentLine.length + word.length > 35) {
+                                  // Aggiungo una nuova riga prima della parola corrente solo se supera il limite di lunghezza del rigo corrente
+                                  message += currentLine.trim() + "\n";
+                                  currentLine = "";
+                              }
+                      
+                              currentLine += word + currentChar;
+                              word = "";
+                          }
+                      } else {
+                          word += currentChar;
+
+                          if(word.length == 34){
+                              currentLine += word + "-";
+                              message += currentLine.trim() + "\n";
+                              currentLine = "";
+                              word = "";
+                          }
+                  
+                          if ((i + 1) % 35 === 0 || i === result.length - 1) {
+                              if (currentLine.length + word.length > 35) {
+                                  // Aggiungo una nuova riga prima della parola corrente solo se supera il limite di lunghezza del rigo corrente
+                                  message += currentLine.trim() + "\n";
+                                  currentLine = "";
+                              }
                           }
                       }
                   }
+                  
+                  if (currentLine.trim() !== '') {
+                      message += currentLine.trim();
+                  }
+                  
                   // Aggiorna la visualizzazione dei messaggi sulla pagina
                   if (response !== "null") {
                       var br = document.createElement("br");

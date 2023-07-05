@@ -1,3 +1,4 @@
+/*Page functions*/
 window.addEventListener('pageshow', function(event) {
     if (event.persisted) {
       location.reload();
@@ -84,6 +85,10 @@ function cryptL(){
     shaObj.update(document.getElementById("loginPswd").value);
     const hash = shaObj.getHash("HEX");
     document.getElementById("loginPswd").value = hash;
+
+    var name = document.getElementById("loginTxt").value;
+    name = escapeQuotes(name);
+    document.getElementById("loginTxt").value = name;
 }
 
 function cryptR(){
@@ -91,4 +96,29 @@ function cryptR(){
     shaObj.update(document.getElementById("pswd").value);
     const hash = shaObj.getHash("HEX");
     document.getElementById("pswd").value = hash;
+
+    var name = document.getElementById("txt").value;
+    name = escapeQuotes(name);
+    document.getElementById("txt").value = name;
+
+    name = document.getElementById("email").value;
+    name = escapeQuotes(name);
+    document.getElementById("email").value = name;
 }
+
+function escapeQuotes(input) {
+    var output = "";
+    
+    for (var i = 0; i < input.length; i++) {
+      var c = input.charAt(i);
+      
+      if (c === '"' || c === '\'') {
+        output += '\\';
+      }
+      
+      output += c;
+    }
+    
+    return output;
+  }
+  

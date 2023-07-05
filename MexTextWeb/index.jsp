@@ -19,8 +19,8 @@
 			<div class="signup">
 				<form action="register.jsp" method="post" id="signupForm">
 					<label for="chk" aria-hidden="true" style="margin-bottom: 0;">Sign up</label>
-					<input type="text" name="txt" placeholder="Nickname" required="" autocomplete="off">
-					<input type="email" name="email" placeholder="Email" required="" autocomplete="off">
+					<input type="text" name="txt" id="txt" placeholder="Nickname" required="" autocomplete="off">
+					<input type="email" name="email" id="email" placeholder="Email" required="" autocomplete="off">
 					<div class="password-container">
 						<input type="password" name="pswd" id="pswd" placeholder="Password" required="" autocomplete="off" oninput="checkPasswordsMatch()">
 						<span class="password-toggle" id="toggle" onclick="togglePasswordVisibility()"><i id="eye" class="fa fa-eye"></i></span>
@@ -30,7 +30,7 @@
 						<span class="password-toggle" id="toggle1" onclick="togglePasswordVisibility1()"><i id="eye1" class="fa fa-eye"></i></span>
 						<span class="tooltip" id="toolt">Passwords don't match</span>
 					</div>
-					<center><p style="font-size: 0.7em; color: aliceblue;">Cliccando accetti il trattamento dei dati secondo la normativa<br>del <a href="download/Privacy.pdf" download="Privacy.pdf" style="color:aqua">Regolamento Europeo 2016/679</a></p></center>
+					<center><p style="font-size: 0.7em; color: aliceblue;">By clicking you accept the processing of data according to <br>the <a href="download/Privacy.pdf" download="Privacy.pdf" style="color:aqua">European Regulation 2016/679</a></p></center>
 					<button type="submit" id="signupBtn" disabled onclick="cryptR()">Sign up</button>
 				</form>
 			</div>
@@ -38,7 +38,7 @@
 			<div class="login">
 				<form action="mextext/mextext.jsp" method="post" id="loginForm">
 					<label for="chk" aria-hidden="true" style="margin-bottom: 0;">Login</label>
-					<input type="text" name="loginTxt" placeholder="Nickname" required="" autocomplete="off">
+					<input type="text" name="loginTxt" id="loginTxt" placeholder="Nickname" required="" autocomplete="off">
 					<input type="password" name="loginPswd" id="loginPswd" placeholder="Password" required="" autocomplete="off">
 					<span class="password-toggle" id="toggle2" onclick="togglePasswordVisibility2()"><i id="eye2" class="fa fa-eye"></i></span>
 					<button type="submit" onclick="cryptL()">Login</button>

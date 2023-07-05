@@ -13,16 +13,51 @@ document.addEventListener('DOMContentLoaded', function() {
         // Codice per gestire l'invio del messaggio
         const result = messageInput.value;
         var message = "";
+        var currentLine = "";
+        var word = "";
+        
         for (var i = 0; i < result.length; i++) {
-            message += result.charAt(i);
-            if ((i + 1) % 35 === 0) {
-                var lastSpaceIndex = message.lastIndexOf(" ");
-                if (lastSpaceIndex !== -1) {
-                message = message.substring(0, lastSpaceIndex) + "\n";
+            var currentChar = result.charAt(i);
+        
+            if (currentChar === " " || currentChar === "\n") {
+                if (currentChar === "\n") {
+                    // Se il carattere corrente è un a capo, aggiungo il rigo corrente a `message`
+                    message += currentLine.trim() + "\n";
+                    currentLine = "";
+                }else{
+                    if (currentLine.length + word.length > 35) {
+                        // Aggiungo una nuova riga prima della parola corrente solo se supera il limite di lunghezza del rigo corrente
+                        message += currentLine.trim() + "\n";
+                        currentLine = "";
+                    }
+            
+                    currentLine += word + currentChar;
+                    word = "";
+                }
+            } else {
+                word += currentChar;
+
+                if(word.length == 34){
+                    currentLine += word + "-";
+                    message += currentLine.trim() + "\n";
+                    currentLine = "";
+                    word = "";
+                }
+        
+                if ((i + 1) % 35 === 0 || i === result.length - 1) {
+                    if (currentLine.length + word.length > 35) {
+                        // Aggiungo una nuova riga prima della parola corrente solo se supera il limite di lunghezza del rigo corrente
+                        message += currentLine.trim() + "\n";
+                        currentLine = "";
+                    }
                 }
             }
         }
-
+        
+        if (currentLine.trim() !== '') {
+            message += currentLine.trim();
+        }
+    
         if (message.trim() !== '') {
 
             // Creazione di un oggetto
@@ -48,9 +83,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        var mex = "";
+        for (var i = 0; i < result.length; i++) {
+            var c = result.charAt(i);
+            
+            if (c === '"' || c === '\'') {
+              mex += '\\';
+            }
+            
+            mex += c;
+          }
+
         var xhr = new XMLHttpRequest();
         // Costruisci la stringa dei parametri da inviare
-        var params = "content=" + encodeURIComponent(messageInput.value);
+        var params = "content=" + encodeURIComponent(mex);
         xhr.open("POST", "sendMessage.jsp", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send(params);
