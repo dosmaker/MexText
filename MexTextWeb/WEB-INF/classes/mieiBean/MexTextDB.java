@@ -23,7 +23,7 @@ public class MexTextDB implements java.io.Serializable{
     private String nickname, password, email, token, nicknameChat = "", content = "";
 
     public MexTextDB() {
-        String url = "jdbc:mysql://raspberrypi.local:3306/MexText";
+        String url = "jdbc:mysql://localhost:3306/MexText";
         String user = "root";
         String password = "Sciascia1!";
 
@@ -147,16 +147,15 @@ public class MexTextDB implements java.io.Serializable{
 
 
     public boolean Login(){
-        String str = "SELECT * FROM UserMexText WHERE Nickname = '"+nickname+"' OR Email = '"+nickname+"'";
-        String nick = null, pass = null; Boolean on;
-        try {
-            ResultSet query = stmt.executeQuery(str);
+        String str = "SELECT * FROM UserMexText WHERE Nickname = ?", nick = null, pass = null; boolean on = false;
+        try (PreparedStatement preparedStatement = conn.prepareStatement(str)) {
+            preparedStatement.setString(1, nickname);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            if(query.next()){
-                nick = query.getString("Nickname");
-                pass = query.getString("Password");
-                on = query.getBoolean("Online");
-                nickname = nick;
+            if(resultSet.next()){
+                nick = resultSet.getString("Nickname");
+                pass = resultSet.getString("Password");
+                on = resultSet.getBoolean("Online");
             }else{
                 return false;
             }
@@ -292,6 +291,7 @@ public class MexTextDB implements java.io.Serializable{
             try {
                 boolean x = stmt.execute("UPDATE UserMexText SET Password = '"+password+"' WHERE Nickname = '"+nick+"'");
                 boolean y = stmt.execute("UPDATE UserMexText SET Token = NULL WHERE Nickname = '"+nick+"'");
+                //close();
                 return "true";
             } catch (SQLException e) {
                 e.printStackTrace();
